@@ -16,3 +16,7 @@ libraryDependencies += "com.typesafe.play" %% "play" % "2.5.0"
 libraryDependencies += "org.tpolecat"      %% "doobie-core-cats"       % doobieVersion
 libraryDependencies += "org.tpolecat"      %% "doobie-postgres-cats"   % doobieVersion
 libraryDependencies += "org.scalatest"     %% "scalatest"   % "3.0.0" % "test"
+
+flywayUrl       := "jdbc:postgresql:todoobie"
+flywayUser      := "todoobie"
+flywayLocations := Seq("filesystem:migrations")
