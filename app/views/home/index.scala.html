@@ -1,5 +1,12 @@
+@(todos: List[algebras.Todo])
+
 @main("Home") {
   <p>
     todoobie
   </p>
+  <ul>
+    @for(todo <- todos) {
+      <li>@todo.content</li>
+    }
+  </ul>
 }

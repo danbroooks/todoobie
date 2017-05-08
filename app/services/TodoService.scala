@@ -1,5 +1,6 @@
 package services
 
+import algebras.Todo
 import services.persistence.Connection
 import doobie.imports._, cats._
 
@@ -11,7 +12,7 @@ trait TodoService {
     def all = sql"""
         select content from todos
       """
-        .query[String]
+        .query[Todo]
         .list
         .transact(Connection.xa)
         .unsafePerformIO
